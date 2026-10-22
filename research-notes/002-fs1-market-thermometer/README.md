@@ -29,6 +29,8 @@ FS1 does not establish external causation, the next price direction, state persi
 | Lags, deltas, standardized change and Pulse | Comparison with the instrument's own history | Not a probability of profit or an external explanation |
 | FS1-F00 through FS1-F15 | Four-bit compression relative to exported fixed cuts | No good/bad, bullish/bearish or safety ordering |
 
+Each of the four axes contributes one binary bit according to whether its value is strictly above its exported fixed cut. Four binary axes produce `2^4 = 16` possible combinations, encoded as `FS1-F00` through `FS1-F15`; equality with a cut remains on the lower bit.
+
 The raw fields are `volatility`, `trend`, `breakout` and `meanrev`. Volatility, breakout and mean reversion use percent units. Trend is an unsigned, dimensionless efficiency/persistence readout; a larger trend value does not distinguish an upward from a downward path.
 
 The `*_delta20` fields are current minus the value 20 observation positions earlier. Differences in percent-valued fields are **percentage points**. This is an endpoint comparison, not a fitted slope or an intraday change.
