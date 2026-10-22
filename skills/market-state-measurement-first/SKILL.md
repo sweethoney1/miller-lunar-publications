@@ -90,6 +90,31 @@ Possible families include:
 
 Do not include every available feature simply because it exists.
 
+## Worked example — FS1 UNIVERSAL as a market thermometer
+
+A separate Miller & Lunar Research tool, **FS1 UNIVERSAL**, is one example of what a measurement-first output can look like. It is a **thermometer**, not an entry signal and not a claim that four variables fully describe a market.
+
+The current audit export exposes four primary daily measurement axes:
+
+- `volatility`
+- `trend`
+- `breakout`
+- `meanrev`
+
+The audit also records comparison fields such as 20-session lags/deltas, longer-horizon scaling/standardization fields when available, and a compact `fingerprint` state label.
+
+The important lesson is the **shape of the workflow**, not the private implementation:
+
+1. choose a small set of endogenous market behaviors;
+2. compute them under one consistent data pipeline;
+3. retain the raw numeric measurements;
+4. compare today's values with earlier values;
+5. only then compress the measurements into a label if a label is useful.
+
+A fingerprint label is therefore downstream of measurement. It must never replace the underlying numbers.
+
+Public worked example: [FS1 UNIVERSAL measurement example](examples/fs1-universal.md).
+
 ## Step 4 — Separate description from selection
 
 If studying “large moves,” define the population using variables native to that timeframe.
