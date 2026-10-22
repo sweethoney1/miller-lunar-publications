@@ -18,7 +18,7 @@ Published component editions: RN-001 v1.3, RN-002 v1.2 and FS1 worked example v1
 - Documented the two sequential 252-observation windows and the earliest possible Pulse at row 545 under complete inputs, explaining the archived 99/643 and 103/647 availability counts.
 - Published the fixed display cuts, bit weights and the fact that their original calibration rationale was not recovered.
 - Identified missing configuration/build metadata in old exports and the absence of matched event base rates. No historical inputs or provenance were fabricated.
-- Added canonical handoff paths and a combined edition map. The reader and tests are already in the repository; preserve its folders when downloading.
+- Added a public entry map separating the reusable method, research lineage, worked implementation and runnable audit path. The reader and tests remain in their repository folders for runnable use.
 
 ### Not performed or still unknown
 
@@ -26,7 +26,6 @@ Published component editions: RN-001 v1.3, RN-002 v1.2 and FS1 worked example v1
 - No new numerical criteria were invented to make the historical support judgment pass retrospectively.
 - Cross-project pristine-holdout status, original cut-calibration provenance and historical exporter configuration remain unverified.
 - The private exporter was not modified to emit configuration/build metadata. A future change would be a separate engineering task.
-- The previously renamed 00–04 handoff files were not available for inspection. This release supplies a canonical repository handoff; it does not claim those old files were repaired.
 - Full private market/audit datasets were not redistributed. Public code availability does not make every archived empirical count publicly reproducible.
 
 ## Earlier component editions
