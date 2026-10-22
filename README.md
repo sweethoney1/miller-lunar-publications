@@ -18,7 +18,7 @@ This is the **public publications library**. Research notebooks, trading-engine 
 | Note | Title | Edition | Read |
 | --- | --- | --- | --- |
 | RN-001 | **The Dinosaur Accident: Measuring Market Structure Before Explaining It** | Archive synthesis v1.2 — 2026-10-22 | [Read Research Note](research-notes/001-the-dinosaur-accident/README.md) |
-| RN-002 | **FS1 UNIVERSAL as a Market Thermometer** | Documentation v1.0 — 2026-10-22 | [Read FS1 Note](research-notes/002-fs1-market-thermometer/README.md) |
+| RN-002 | **FS1 UNIVERSAL as a Market Thermometer** | Documentation v1.1 — 2026-10-22 | [Read FS1 Note](research-notes/002-fs1-market-thermometer/README.md) |
 
 **Dinosaur note in one sentence:** A search for trading access points became a study of consistently measured market structure; C55 received support in a frozen historical holdout, while uneven annual results and no qualifying continuity role at the three tested portfolio scales kept the economic conclusion limited.
 
