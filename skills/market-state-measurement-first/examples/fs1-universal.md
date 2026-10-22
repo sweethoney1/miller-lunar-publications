@@ -1,6 +1,6 @@
 # FS1 UNIVERSAL Worked Measurement Example
 
-**Documentation edition v1.1 | 2026-10-22**
+**Documentation edition v1.2 | 2026-10-22**
 
 Use FS1 as an optional worked example. Read the [FS1 research note](../../../research-notes/002-fs1-market-thermometer/README.md) for the archived evidence. Keep the general research workflow independent of FS1.
 
@@ -8,7 +8,7 @@ The private price-to-axis implementation and raw datasets are not included. The 
 
 ## 1. Define the observation object
 
-Record symbol, broker/source, server timezone, observed span, actual history origin, indicator version and data mode. UNIVERSAL and LEGACY_XAU are different coverage pipelines.
+Record symbol, broker/source, server timezone, observed span, actual history origin, indicator version and data mode. `LEGACY_XAU` is the older XAU-specific coverage/profile retained from earlier FOUR work; `UNIVERSAL` is the current default cross-symbol pipeline used in the reviewed FS1 work. They share the numerical core but use different coverage rules, so codes are not directly interchangeable across modes.
 
 If an authorized `Market_Fingerprint_v0_3_indicator.mq5` indicator, internal version 0.31, is already installed:
 
@@ -38,6 +38,8 @@ Read the prefix's exported `_lag20`, `_delta20`, `_scale252` and `_z` fields. Th
 - D and Pulse describe change magnitude. Pulse is not a profit probability, a direction or an absolute cross-instrument scale.
 
 A larger unsigned trend measurement can describe a more persistent rise or fall. Delta is an endpoint comparison, not a fitted slope or a current-tick direction.
+
+Each axis also contributes one binary bit to the fingerprint: strictly above its exported fixed cut = 1, otherwise = 0. Four binary axes yield `2^4 = 16` possible combinations, encoded as `FS1-F00` through `FS1-F15`. Equality with a cut remains on the lower bit.
 
 ## 3. Preserve quality and availability
 
