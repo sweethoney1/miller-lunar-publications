@@ -1,7 +1,7 @@
 # The Dinosaur Accident: Measuring Market Structure Before Explaining It
 
 **Miller & Lunar Research — Public Research Note 001**  
-**Archive synthesis v1.2 | 2026-10-22 | Not peer reviewed**  
+**Archive synthesis v1.3 | 2026-10-22 | Not peer reviewed**  
 **Status:** retrospective synthesis of an existing private research lineage; **no new experiment was run for this note**.
 
 **Research disclosure:** This note summarizes a human-directed research program with AI-assisted code, analysis and editorial drafting. The underlying market data, source code, intermediate tables and private research links are not published here. Public visibility does not grant rights to third-party market data. Nothing in this note is investment advice or audited trading performance.
@@ -18,7 +18,7 @@ That shift produced the internal nickname **Dinosaur**.
 
 Using the same frozen structural vocabulary on XAUUSD data, the research first measured H4 structural-trend episodes in 2024 and 2025, then descended into H1 and M15 anatomy without allowing lower-timeframe information to redefine the H4 population. The main cross-year surprise was not that price amplitude was identical—it was not—but that several relationships inside the structural grammar remained directionally similar across two very different years.
 
-A later execution candidate, C55, was frozen before opening the designated January–July 2026 historical holdout. It received support in that held-out historical sample, but its realized results were highly uneven by year and its standalone economics were later judged weak. A subsequent portfolio overlay found no qualifying continuity role at the three tested C55 scales. That outcome is important: the Dinosaur lineage is **not** evidence that one structural pattern solves trading. It is evidence that market structure can be treated as a measurable research object before attaching explanatory stories to it.
+A later execution candidate, C55, was frozen before opening the designated January–July 2026 historical holdout. It produced a positive realized sum in that branch's held-out historical sample, but the result was concentrated in a few winners and highly uneven by year. The archived label of support was a qualitative internal judgment, not a pass against numerical acceptance thresholds. A subsequent portfolio overlay found no qualifying continuity role at the three tested C55 scales. That outcome is important: the Dinosaur lineage is **not** evidence that one structural pattern solves trading. It is evidence that market structure can be treated as a measurable research object before attaching explanatory stories to it.
 
 The methodological lesson is simple:
 
@@ -63,21 +63,26 @@ The H4 census contained:
 | 2024 | 34 |
 | 2025 | 30 |
 
-These counts are the **frozen H4 structural-trend episode populations used by this archive**. This public note does not independently restate a separate percentile cutoff, and the counts should not be generalized into a universal Dinosaur threshold outside the frozen pipeline.
+The counts 34 and 30 are the **full H4 Structural Trend B census populations** in the respective source years, not counts of a preselected right-tail subset. Stage52R then ranked that census separately under each H4-native lens and reported K1, K3, K5, K10 and K20 tail views, expanding support at boundary ties. There was no single combined Dinosaur membership score or universal size cutoff. C55 subsequently used causally active H4 Trend B episodes, not future Top-K membership, for eligibility.
 
-Across the five primary H4 lenses, all reported pairwise Spearman relationships retained the same sign between 2024 and 2025. Examples:
+The table below reports all **10 distinct off-diagonal pairs** from the archived five-lens matrix; diagonal self-correlations and mirrored duplicates are omitted. These are descriptive correlations over the full census, not an independent test of right-tail coherence.
 
 | Relationship | 2024 Spearman | 2025 Spearman |
 | --- | ---: | ---: |
-| directional displacement vs. maximum favorable excursion | 0.843 | 0.835 |
-| directional displacement vs. same-direction BOS count | 0.542 | 0.676 |
-| directional displacement vs. H4 duration | 0.657 | 0.672 |
-| swing-leg count vs. H4 duration | 0.817 | 0.747 |
+| displacement vs. favorable excursion | 0.843 | 0.835 |
+| displacement vs. same-direction BOS count | 0.542 | 0.676 |
+| displacement vs. swing-leg count | 0.477 | 0.626 |
+| displacement vs. H4 duration | 0.657 | 0.672 |
+| favorable excursion vs. same-direction BOS count | 0.551 | 0.531 |
+| favorable excursion vs. swing-leg count | 0.429 | 0.467 |
+| favorable excursion vs. H4 duration | 0.701 | 0.634 |
+| same-direction BOS count vs. swing-leg count | 0.671 | 0.594 |
 | same-direction BOS count vs. H4 duration | 0.709 | 0.709 |
+| swing-leg count vs. H4 duration | 0.817 | 0.747 |
 
-This does **not** prove a universal market law. Two development years are not enough for that claim. It does, however, justify a narrower observation:
+All signs agree across these two development samples. However, the variables share the same episode paths and some have mechanical relationships: longer episodes have more opportunity to accumulate legs and BOS events. The lens names do not establish statistical independence.
 
-> Within this frozen measurement pipeline, several dimensions of large H4 structural trends moved together in similar directions across 2024 and 2025.
+No matched null, random-episode baseline, confidence interval or independence-adjusted inference is reported. With census sizes of 34 and 30, sign agreement alone does not establish a stable market law or validated phenotype. The observation is limited to similar directions of co-movement under this fixed measurement pipeline. A stronger claim would require a separately specified baseline and uncertainty analysis; that work was not added to this archival edition.
 
 The project’s internal interpretation after review was **COHERENT_H4_DINOSAUR_PHENOTYPE**. In this public note, that label should be read as an internal research decision, not a peer-reviewed taxonomy.
 
@@ -114,7 +119,7 @@ The study then descended once more to M15, again without allowing M15 to redefin
 The research sequence can be read as a one-way chain:
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Freeze H4 structural population] --> B[Inspect H1 anatomy]
     B --> C[Inspect M15 lineage]
     C --> D[Freeze one C55 candidate]
@@ -165,6 +170,10 @@ The important methodological feature is timing: this candidate was frozen **befo
 
 Here, **prospective** describes the order of hypothesis freezing and holdout inspection within a historical research protocol. It does **not** mean live forward trading, broker-executed returns or a real-time trading record. The 2024 and 2025 results are development references, not held-out C55 confirmation.
 
+**Scope of the holdout claim:** the recovered Stage55 record establishes a freeze-and-open sequence for the Monster Zero/C55 branch. A complete cross-project access and hypothesis-usage register was not available for this edition. We therefore cannot certify that the same 2026 period had never been inspected or used elsewhere in the wider research program. Read this as a **branch-specific historical holdout**, not a globally pristine dataset.
+
+**What was specified before opening:** the order allowed three qualitative judgments—support, mixed or reject—and described support as meaningful occurrence and forward asymmetry without rescue logic. It did not freeze numerical pass thresholds for trade count, return, win rate, significance or tail sensitivity. The later support label is consequently an internal qualitative assessment, not an auditable numerical acceptance test. No threshold is invented retrospectively here.
+
 ---
 
 ## 5. What happened when the historical holdout was opened?
@@ -173,39 +182,53 @@ The held-out historical evaluation admitted 14 candidates from the available Jan
 
 The frozen development and holdout chronology later contained:
 
-| Partition | Admitted candidates | Realized R |
+| Partition | Candidates | Wins | Win rate | Median R | Total R |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 2024 development | 28 | 7 | 25.00% | -1.000 | +0.186 |
+| 2025 development | 27 | 4 | 14.81% | -1.000 | -2.328 |
+| 2026 Jan–Jul branch holdout | 14 | 3 | 21.43% | -1.000 | +12.886 |
+| **Pooled** | **69** | **14** | **20.29%** | **-1.000** | **+10.744** |
+
+The two development years together sum to **-2.142R**. The pooled positive result depends on the 2026 contribution. The following additional arithmetic diagnostic uses the frozen 2026 ledger without regenerating any market outcome.
+
+| 2026 descriptive sensitivity | Retained candidates | Total R |
 | --- | ---: | ---: |
-| 2024 development | 28 | +0.186R |
-| 2025 development | 27 | -2.328R |
-| 2026 Jan–Jul historical holdout | 14 | +12.886R |
-| **Pooled** | **69** | **+10.744R** |
+| Original record | 14 | +12.886 |
+| Remove largest winner after observing outcomes | 13 | -0.677 |
+| Remove largest two winners after observing outcomes | 12 | -8.839 |
+
+The three winning 2026 outcomes were approximately +13.562840R, +8.162125R and +2.161083R; the other eleven outcomes were -1R each. The arithmetic comes from the frozen `c55_realized_chronology.csv`, rather than a rerun of the candidate engine. The full timestamped ledger remains private.
+
+These are **post hoc concentration diagnostics**, not predeclared acceptance criteria, implementable filters or tests of a newly modified strategy. They show fragility of the small-sample aggregate to its largest realizations. Concentration alone does not refute a deliberately right-tailed return distribution.
 
 The payoff shape was sparse and strongly right-tailed. Across the pooled chronology, most candidates were losses; a small number of large winners carried the positive result.
 
 This is exactly why the Dinosaur story should **not** be published as a “winning system.”
 
-An internal parking decision classified C55 as a validated portfolio-engine candidate with **weak standalone economics**. The research explicitly prohibited retuning C55 merely to make it trade more frequently or look better as a standalone strategy.
+An internal parking decision used the archival label “validated portfolio-engine candidate” with **weak standalone economics**. That label should not be read as independent statistical validation of an economically durable edge. The research explicitly prohibited retuning C55 merely to make it trade more frequently or look better as a standalone strategy.
 
 A subsequent archived portfolio test, **C55 Dinosaur × A+M+E Marginal Portfolio Overlay v0.1**, asked whether C55 could improve the existing pack's return continuity. Here, **A+M+E** denotes the project's existing multi-strategy baseline pack; **R1** was another strategy module deliberately excluded from this particular comparison. The report reconciled the frozen C55 identities and realized-R values without regenerating candidates or outcomes.
 
-The archived evaluation used a formal drawdown guardrail and a separate continuity reference. The 60-day continuity value was descriptive in the source report, so this note does not reinterpret it as a universal smoothness formula or an independent market law.
+The overlay order took its drawdown guardrail from the **previous frozen four-strategy pack's observed MaxDD**, approximately -10.54R (the source value is -10.542780337942R). It was a historical comparison boundary, not a probability-based risk limit or a new allowance derived from A+M+E's -8.0R MaxDD. Figures are rounded for display here; the archived calculations used their original precision.
+
+A qualifying scale had to satisfy all four conditions simultaneously: total R above A+M+E's +83.4962R; MaxDD no worse than the inherited guardrail; longest no-new-HWM interval shorter than 73.6743 days; and longest positive payout gap no longer than 15.65625 days. The separate 60-day continuity value was a descriptive objective, not an additional universal pass threshold.
 
 | Overlay setting | Archived result |
 | --- | --- |
 | Baseline | A+M+E |
 | Tested relative C55 scales | 0.25X, 0.50X, 1.00X |
-| Formal drawdown guardrail | -10.542780337942R |
+| Formal drawdown guardrail | Approximately -10.54R, inherited from prior four-pack |
 | Continuity reference | 60 days (descriptive) |
 | Qualifying tested scales | None |
 | Final decision | `C55_EDGE_REAL_BUT_NO_CONTINUITY_ROLE_AT_TESTED_SCALES_v0.1` |
 
 The scale labels are the archived report's relative C55 allocations, not risk percentages. The result is specific to the tested baseline, scales and continuity evaluation: **none of those tested scales qualified for the required continuity role**. It does not establish that every possible portfolio use fails, and no new weight search was performed for this note.
 
-This later result narrows the earlier portfolio-candidate label. Positive pooled historical R and support in the historical holdout did not establish a useful continuity contribution to A+M+E at the tested scales. C55 remains parked.
+This later result narrows the earlier portfolio-candidate label. Positive pooled historical R and a favorable internal assessment of the branch holdout did not establish a useful continuity contribution to A+M+E at the tested scales. C55 remains parked.
 
 The public conclusion is narrower:
 
-> A structural lineage can be measurable and receive support in a historical holdout while still being economically awkward as a standalone trading engine and failing a specific tested portfolio role.
+> A structural lineage can be measurable and have a positive, concentrated historical result while still being economically awkward and failing a specific tested portfolio role.
 
 That is not a contradiction. It is a reminder that **market description, signal edge and business utility are separate questions**.
 
@@ -230,7 +253,7 @@ The archive supports several different statement types. They should not be merge
 - A coherent H4 “Dinosaur” phenotype existed across the two development years.
 - H1 structure recurred while accessibility differed.
 - M15 showed a recurrent nested lineage.
-- C55 received an initial internal judgment of support in the historical holdout and deserved portfolio-level consideration; that judgment did not override the later negative tested continuity result.
+- C55 received an initial qualitative internal support judgment for the branch holdout; no numerical acceptance thresholds or global holdout-pristineness certification were recovered. That judgment did not override the later negative tested continuity result.
 
 These are reasoned internal judgments based on the archived tables. They are not independently replicated findings.
 
@@ -344,3 +367,4 @@ Prepared by **Miller & Lunar Research** through a human-directed research workfl
 | v1.0 | 2026-10-22 | Initial public archive synthesis. |
 | v1.1 | 2026-10-22 | Clarified that the designated 2026 evaluation was a historical holdout rather than live forward trading; added the later A+M+E overlay decision and its tested-scale boundary. No new market experiment, candidate rerun or parameter search. |
 | v1.2 | 2026-10-22 | Editorial clarification only: defined R, explained A+M+E and R1, surfaced the archived drawdown/continuity criteria, clarified the frozen H4 episode counts without inventing a new threshold, and added a one-way H4→H1→M15→C55 research-flow diagram. No new experiment or changed conclusion. |
+| v1.3 | 2026-10-22 | Added win rates, medians and post hoc ledger concentration arithmetic; showed all ten correlation pairs; clarified full-census versus tail views, qualitative support criteria, unknown cross-project holdout usage and the inherited drawdown guardrail. No market rerun, new null/CI study or retuning. |

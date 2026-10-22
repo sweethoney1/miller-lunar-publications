@@ -1,6 +1,6 @@
 # FS1 UNIVERSAL Worked Measurement Example
 
-**Documentation edition v1.2 | 2026-10-22**
+**Documentation edition v1.3 | 2026-10-22**
 
 Use FS1 as an optional worked example. Read the [FS1 research note](../../../research-notes/002-fs1-market-thermometer/README.md) for the archived evidence. Keep the general research workflow independent of FS1.
 
@@ -49,6 +49,12 @@ The `data_verified` flag comes from the exporter. Tick counts support broker-his
 
 Retain NA rows and unverified observations. Do not zero-fill axes or collapse the timeline before computing lags. A ready fingerprint with missing Pulse is possible.
 
+Pulse can first appear at **row 545** under complete inputs: State at row 21, delta20 at row 41, scale/z/D at row 293, then Pulse after another 252 prior D values. This explains the archived 99/643 and 103/647 Pulse counts. Missing inputs or zero scaling can postpone it further.
+
+The source's common fixed cuts are **V=2.0%, T=0.25, B=50.0%, M=25.0%**, with bit weights 8/4/2/1. These are not instrument-specific percentiles. Their original calibration rationale was not recovered; do not infer it was empirically validated on XAU or across instruments.
+
+The old CSV lacks producing-build/configuration hashes, requested history start, audit cutoff, export time and timezone metadata. Record unknowns as unknown. The reviewed source version and the reader's input SHA do not authenticate those settings. No exporter upgrade is part of this edition.
+
 ## 4. Run the public reader
 
 From the repository root, with Python 3.9 or newer and no third-party packages:
@@ -88,6 +94,8 @@ Volatility was below its 20-observation reference in XAU and above that referenc
 
 These exports end in June 2024 and are **not current market readings**. Each file retained 20 initial NA labels. All coded EUR rows had the low volatility bit, showing a limitation of the fixed cut in that sample.
 
+Read breakout and mean-reversion percentages only under their distinct event definitions. No matched base rates are supplied; neither percentage alone establishes an edge or unusual behavior.
+
 ## 6. Return a bounded report
 
 Return the actual observation object and clock; quality and missingness; raw values, lags, deltas and units; an optional code after the values; evidence status; and the limits of the interpretation.
@@ -103,3 +111,7 @@ Without the private exporter, use the general workflow with separately declared 
 F00 ถึง F15 เป็นรหัสย่อ ไม่มีลำดับดีหรือแย่ และ NA ไม่ใช่ F00 สองตลาดมีรหัสเดียวกันแต่ค่าดิบและการเปลี่ยนต่างกันได้ Pulse อ่านขนาดความเปลี่ยนเมื่อเทียบประวัติของตลาดนั้น ไม่ใช่โอกาสกำไร
 
 ถ้ายังไม่มีข้อมูลวัด อย่าสรุปว่าข่าวมีอิทธิพลกี่เปอร์เซ็นต์จากความรู้สึก ให้ระบุว่า UNMEASURED ก่อน สกิลช่วยจัดลำดับวิจัย เครื่องอ่าน CSV ช่วยตรวจไฟล์ที่มีอยู่ ส่วนสูตรสร้าง FS1 จากราคายังอยู่ในงานต้นฉบับ
+
+## Component history
+
+This worked example is v1.3. The earlier v1.0 overview was expanded in v1.1 with export-reading instructions, then v1.2 clarified encoding and modes. Version v1.3 adds warm-up, cuts, unknown configuration provenance and base-rate limits. See the [release map](../../../HANDOFF.md) and [combined changelog](../../../CHANGELOG.md).

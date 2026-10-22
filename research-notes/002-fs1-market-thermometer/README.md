@@ -1,7 +1,7 @@
 # FS1 UNIVERSAL as a Market Thermometer
 
 **Miller & Lunar Research — Public Research Note 002**  
-**Documentation edition v1.1 | 2026-10-22 | Not peer reviewed**
+**Documentation edition v1.2 | 2026-10-22 | Not peer reviewed**
 
 This is **Research Note 002, not Paper 002**. It documents an existing measurement tool and archived outputs. It adds no market experiment, forecasting test, strategy gate or parameter search.
 
@@ -37,6 +37,20 @@ The `*_delta20` fields are current minus the value 20 observation positions earl
 
 The `*_scale252` and `*_z` fields concern the **20-session change**, not the extremeness of today's raw level. `D` summarizes standardized change across the axes. Pulse ranks that change magnitude against the instrument's own preceding history. Pulse 80 in two instruments does not imply equal absolute volatility.
 
+### Why Pulse starts much later than the fingerprint
+
+The core has two sequential historical windows. First it scales the 20-session deltas using **252 preceding delta observations**, excluding the current one. It then computes D and requires **252 preceding D values**, again excluding the current one, before producing Pulse.
+
+| First possible output with adequate event support and complete data | Zero-based index | One-based row |
+| --- | ---: | ---: |
+| All four State axes | 20 | 21 |
+| All four delta20 fields | 40 | 41 |
+| Scale252, z and D | 292 | 293 |
+| Pulse | 544 | 545 |
+
+Thus the earliest possible Pulse needs **545 observations**, not merely lag20 plus one 252-row window. The reviewed exports reach those first positions: 643-544 = 99 available Pulse values in XAU and 647-544 = 103 in EUR. Missing inputs, inadequate event support or a zero MAD scale can postpone readiness further. These positions describe the existing calculation; no warm-up rule was changed.
+
+
 ## 3. Pipeline and availability
 
 The reviewed source is `Market_Fingerprint_v0_3_indicator.mq5`, internal version **0.31**. It derives M15 and daily observations from M1 history. The display chart timeframe does not replace this internal pipeline.
@@ -52,6 +66,10 @@ Retain missing and unverified observations in the timeline. Do not drop them bef
 ## 4. Archived export checks
 
 These are observed spans, not proof of requested terminal settings. The current default history request starts in January 2024, whereas these exported files contain earlier observations. Preserve actual configuration and observed span when comparing files.
+
+**Configuration provenance is incomplete.** The exports carry data mode and cuts, but not the requested history start, audit cutoff, export time, broker timezone, producing source/build hash or configuration hash. The reviewed reference source is v0.31; the files themselves do not authenticate their producing build. The reader's input SHA identifies the CSV bytes, not the configuration that produced them.
+
+Do not infer the requested history start from the first available row, retroactively insert today's defaults, or claim an old export now has a verified configuration. For future exports, those settings and identifiers should accompany the CSV in metadata or a sidecar record. That exporter change has **not** been implemented in this documentation release.
 
 | Check | XAUUSD | EURUSD |
 | --- | ---: | ---: |
@@ -78,7 +96,26 @@ The last row in each export provides a common-date illustration, without selecti
 
 Both labels are F02 despite different raw values and opposite signs of volatility change. The code is a coarse index, not an equivalence claim. F00 is likewise a combination relative to cuts, not a danger label.
 
+The reviewed implementation uses shared fixed display cuts in the axes' own units:
+
+| Axis | Fixed cut | Bit weight |
+| --- | ---: | ---: |
+| Volatility | 2.0% | 8 |
+| Trend efficiency | 0.25 | 4 |
+| Breakout success rate | 50.0% | 2 |
+| Mean-reversion success rate | 25.0% | 1 |
+
+A bit is 1 only when its raw value is **strictly greater** than the cut. These are common numerical display boundaries, not instrument-specific percentiles, a market-derived universal calibration or selected trading gates. The recovered source states that they are fixed and not recalibrated to EA results. **The original empirical rationale/calibration history was not recovered**; this edition cannot establish whether the choices were initially motivated by XAU.
+
+Identical codes across instruments therefore assert only the same four inequalities against these cuts, not equivalent relative market states. The numeric values and within-instrument changes remain the main comparison surface.
+
 All 627 coded EURUSD rows had the low volatility bit in this export. The fixed volatility cut therefore did not distinguish high and low groups there. This is a limitation of that display boundary in this sample, not permission to tune it against trading outcomes. No cut was changed for publication.
+
+### Event rates need their own reference
+
+Breakout near 52% and mean reversion near 21% are conditional success rates under their respective existing event definitions and horizons. They are not directly comparable to each other, a 50/50 coin flip or unconditional random-candle behavior.
+
+No matched base rate under the same event definitions is reported here. Consequently these readouts describe observed behavior; they do not establish excess continuation, unusually weak reversion or a trading edge. A stronger comparison needs a separately declared reference process or sample, not a benchmark chosen after seeing these rates.
 
 ## 5. A practical public handoff
 
@@ -113,5 +150,6 @@ FS1 remains a small descriptive thermometer. This release adds no forecast, stat
 | --- | --- | --- |
 | v1.0 | 2026-10-22 | Documented the existing thermometer, reviewed two archived exports and added a CSV reader. No new market run or changed measurement rule. |
 | v1.1 | 2026-10-22 | Editorial clarification only: explained the four-bit/16-code encoding and distinguished the archived LEGACY_XAU profile from the reviewed UNIVERSAL cross-symbol pipeline. No measurement rule, threshold, result or conclusion changed. |
+| v1.2 | 2026-10-22 | Documented the two-stage warm-up and first possible Pulse at row 545; exposed fixed cuts with unknown calibration provenance; identified missing export configuration/build metadata and the absence of matched event base rates. No exporter or measurement change. |
 
 Prepared by **Miller & Lunar Research** through a human-directed research workflow with AI-assisted code, analysis and editorial support. See the repository's attribution and rights boundary.

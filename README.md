@@ -4,6 +4,8 @@ Independent working papers on systematic trading, risk measurement and financial
 
 This is the **public publications library**. Research notebooks, trading-engine and indicator implementations, proprietary data, account records and internal source-audit files remain in a **separate private research archive**. Selected workflow utilities, such as the FS1 audit CSV reader, are published here. Making this publication library public **does not** make the underlying experiment datasets publicly reproducible.
 
+Start with [HANDOFF.md](HANDOFF.md) for the component editions, runnable reader and folder layout; see [CHANGELOG.md](CHANGELOG.md) for the combined release record.
+
 ## Published working papers
 
 | Paper | Title | Edition | Read |
@@ -17,10 +19,10 @@ This is the **public publications library**. Research notebooks, trading-engine 
 
 | Note | Title | Edition | Read |
 | --- | --- | --- | --- |
-| RN-001 | **The Dinosaur Accident: Measuring Market Structure Before Explaining It** | Archive synthesis v1.2 — 2026-10-22 | [Read Research Note](research-notes/001-the-dinosaur-accident/README.md) |
-| RN-002 | **FS1 UNIVERSAL as a Market Thermometer** | Documentation v1.1 — 2026-10-22 | [Read FS1 Note](research-notes/002-fs1-market-thermometer/README.md) |
+| RN-001 | **The Dinosaur Accident: Measuring Market Structure Before Explaining It** | Archive synthesis v1.3 — 2026-10-22 | [Read Research Note](research-notes/001-the-dinosaur-accident/README.md) |
+| RN-002 | **FS1 UNIVERSAL as a Market Thermometer** | Documentation v1.2 — 2026-10-22 | [Read FS1 Note](research-notes/002-fs1-market-thermometer/README.md) |
 
-**Dinosaur note in one sentence:** A search for trading access points became a study of consistently measured market structure; C55 received support in a frozen historical holdout, while uneven annual results and no qualifying continuity role at the three tested portfolio scales kept the economic conclusion limited.
+**Dinosaur note in one sentence:** A search for trading access points became a study of consistently measured market structure; C55 had a positive but winner-concentrated result in a branch-specific historical holdout, with a qualitative internal support judgment and no qualifying continuity role at the three tested portfolio scales.
 
 The Dinosaur note and FS1 documentation note are **not Paper 002**. They preserve the discovery path and existing measurement example; a future Paper 002 needs its own frozen protocol. The FS1 reader checks an existing export and does not reconstruct FS1 from raw prices.
 
