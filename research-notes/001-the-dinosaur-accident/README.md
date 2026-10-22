@@ -1,7 +1,7 @@
 # The Dinosaur Accident: Measuring Market Structure Before Explaining It
 
 **Miller & Lunar Research — Public Research Note 001**  
-**Archive synthesis v1.0 | 2026-10-22 | Not peer reviewed**  
+**Archive synthesis v1.1 | 2026-10-22 | Not peer reviewed**  
 **Status:** retrospective synthesis of an existing private research lineage; **no new experiment was run for this note**.
 
 **Research disclosure:** This note summarizes a human-directed research program with AI-assisted code, analysis and editorial drafting. The underlying market data, source code, intermediate tables and private research links are not published here. Public visibility does not grant rights to third-party market data. Nothing in this note is investment advice or audited trading performance.
@@ -18,7 +18,7 @@ That shift produced the internal nickname **Dinosaur**.
 
 Using the same frozen structural vocabulary on XAUUSD data, the research first measured H4 structural-trend episodes in 2024 and 2025, then descended into H1 and M15 anatomy without allowing lower-timeframe information to redefine the H4 population. The main cross-year surprise was not that price amplitude was identical—it was not—but that several relationships inside the structural grammar remained directionally similar across two very different years.
 
-A later execution candidate, C55, was frozen before opening the designated 2026 prospective partition. It received prospective support, but its realized results were highly uneven by year and its standalone economics were later judged weak. That outcome is important: the Dinosaur lineage is **not** evidence that one structural pattern solves trading. It is evidence that market structure can be treated as a measurable research object before attaching explanatory stories to it.
+A later execution candidate, C55, was frozen before opening the designated January–July 2026 historical holdout. It received support in that held-out historical sample, but its realized results were highly uneven by year and its standalone economics were later judged weak. A subsequent portfolio overlay found no qualifying continuity role at the three tested C55 scales. That outcome is important: the Dinosaur lineage is **not** evidence that one structural pattern solves trading. It is evidence that market structure can be treated as a measurable research object before attaching explanatory stories to it.
 
 The methodological lesson is simple:
 
@@ -146,30 +146,45 @@ In simplified terms:
 6. exit on structural stop or causal H4 opposite-BOS termination;
 7. do not add targets, trailing stops, alternate entries, rescue filters or a second candidate.
 
-The important methodological feature is timing: this candidate was frozen **before** the designated 2026 partition was opened for its prospective test.
+The important methodological feature is timing: this candidate was frozen **before** the designated January–July 2026 historical holdout was opened for the locked test.
+
+Here, **prospective** describes the order of hypothesis freezing and holdout inspection within a historical research protocol. It does **not** mean live forward trading, broker-executed returns or a real-time trading record. The 2024 and 2025 results are development references, not held-out C55 confirmation.
 
 ---
 
-## 5. What happened when the future partition was opened?
+## 5. What happened when the historical holdout was opened?
 
-The 2026 prospective package admitted 14 candidates from the available January–July 2026 sample. The frozen development/prospective chronology later contained:
+The held-out historical evaluation admitted 14 candidates from the available January–July 2026 sample. The frozen development and holdout chronology later contained:
 
 | Partition | Admitted candidates | Realized R |
 | --- | ---: | ---: |
 | 2024 development | 28 | +0.186R |
 | 2025 development | 27 | -2.328R |
-| 2026 prospective partition | 14 | +12.886R |
+| 2026 Jan–Jul historical holdout | 14 | +12.886R |
 | **Pooled** | **69** | **+10.744R** |
 
 The payoff shape was sparse and strongly right-tailed. Across the pooled chronology, most candidates were losses; a small number of large winners carried the positive result.
 
 This is exactly why the Dinosaur story should **not** be published as a “winning system.”
 
-A later internal parking decision classified C55 as a validated portfolio-engine candidate with **weak standalone economics**. The research explicitly prohibited retuning C55 merely to make it trade more frequently or look better as a standalone strategy.
+An internal parking decision classified C55 as a validated portfolio-engine candidate with **weak standalone economics**. The research explicitly prohibited retuning C55 merely to make it trade more frequently or look better as a standalone strategy.
+
+A subsequent archived portfolio test, **C55 Dinosaur × A+M+E Marginal Portfolio Overlay v0.1**, asked whether C55 could improve the existing pack's return continuity. The report reconciled the frozen C55 identities and realized-R values without regenerating candidates or outcomes; R1 was excluded from the baseline.
+
+| Overlay setting | Archived result |
+| --- | --- |
+| Baseline | A+M+E |
+| Tested relative C55 scales | 0.25X, 0.50X, 1.00X |
+| Qualifying tested scales | None |
+| Final decision | `C55_EDGE_REAL_BUT_NO_CONTINUITY_ROLE_AT_TESTED_SCALES_v0.1` |
+
+The scale labels are the archived report's relative C55 allocations, not risk percentages. The result is specific to the tested baseline, scales and continuity evaluation: **none of those tested scales qualified for the required continuity role**. It does not establish that every possible portfolio use fails, and no new weight search was performed for this note.
+
+This later result narrows the earlier portfolio-candidate label. Positive pooled historical R and support in the historical holdout did not establish a useful continuity contribution to A+M+E at the tested scales. C55 remains parked.
 
 The public conclusion is narrower:
 
-> A structural lineage can be measurable and prospectively interesting while still being economically awkward as a standalone trading engine.
+> A structural lineage can be measurable and receive support in a historical holdout while still being economically awkward as a standalone trading engine and failing a specific tested portfolio role.
 
 That is not a contradiction. It is a reminder that **market description, signal edge and business utility are separate questions**.
 
@@ -184,16 +199,17 @@ The archive supports several different statement types. They should not be merge
 - The frozen 2024 and 2025 H4 census contained 34 and 30 structural-trend episodes respectively.
 - The reported pairwise relationships among the five primary H4 lenses retained the same sign across those two years.
 - H1 and M15 were derived from the same source lineage with recorded zero cross-timeframe lineage violations in the frozen studies.
-- One C55 rule was frozen before the designated 2026 prospective partition was opened.
-- The available 2026 prospective package admitted 14 candidates.
+- One C55 rule was frozen before the designated January–July 2026 historical holdout was opened.
+- The held-out historical evaluation admitted 14 candidates; it was not a live forward-trading record.
 - The pooled frozen C55 chronology was positive in R-space but highly uneven by year.
+- The subsequent archived A+M+E overlay reported no qualifying C55 scale among 0.25X, 0.50X and 1.00X for its required continuity role.
 
 ### Internal research interpretations
 
 - A coherent H4 “Dinosaur” phenotype existed across the two development years.
 - H1 structure recurred while accessibility differed.
 - M15 showed a recurrent nested lineage.
-- C55 deserved prospective support and later portfolio-level consideration.
+- C55 received an initial internal judgment of support in the historical holdout and deserved portfolio-level consideration; that judgment did not override the later negative tested continuity result.
 
 These are reasoned internal judgments based on the archived tables. They are not independently replicated findings.
 
@@ -299,3 +315,10 @@ The most important negative result is preserved on purpose: **structural recurre
 ## Attribution
 
 Prepared by **Miller & Lunar Research** through a human-directed research workflow with AI-assisted code, analysis and editorial support. No general reuse rights to third-party data or code are implied by this publication.
+
+## Revision history
+
+| Edition | Date | Change |
+| --- | --- | --- |
+| v1.0 | 2026-10-22 | Initial public archive synthesis. |
+| v1.1 | 2026-10-22 | Clarified that the designated 2026 evaluation was a historical holdout rather than live forward trading; added the later A+M+E overlay decision and its tested-scale boundary. No new market experiment, candidate rerun or parameter search. |
