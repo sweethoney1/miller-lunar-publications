@@ -25,7 +25,7 @@ The Dinosaur note is **not Paper 002**. It preserves the evidence trail and the 
 
 ## Reusable research workflows
 
-- [**Market-State Measurement-First**](skills/market-state-measurement-first/SKILL.md) — a research workflow for measuring what changed in the market before attaching macroeconomic, political, news or regime explanations.
+- [**Market-State Measurement-First**](skills/market-state-measurement-first/SKILL.md) — a research workflow for measuring what changed in the market before attaching macroeconomic, political, news or regime explanations. Includes an [FS1 UNIVERSAL worked measurement example](skills/market-state-measurement-first/examples/fs1-universal.md).
 
 
 ### Paper 001 — important reading notes
