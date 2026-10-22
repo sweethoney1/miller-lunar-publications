@@ -2,7 +2,16 @@
 
 **Release 2026-10-22-review-1**
 
-Use this file as the entry point for the publications and reusable workflow. Component edition numbers describe separate documents; they are not intended to match each other.
+Use this file as the practical map for the publications and reusable workflow. Component edition numbers describe separate documents; they are not intended to match each other.
+
+## Choose the depth you need
+
+- **Method first:** read the [Measurement-first skill](skills/market-state-measurement-first/SKILL.md) and apply it to one bounded question of your own.
+- **Research lineage:** read [The Dinosaur Accident](research-notes/001-the-dinosaur-accident/README.md) to see how an entry-search problem became a market-measurement question.
+- **Worked implementation:** read the [FS1 example](skills/market-state-measurement-first/examples/fs1-universal.md) and [RN-002](research-notes/002-fs1-market-thermometer/README.md) to see one thermometer built under that philosophy.
+- **Runnable audit:** use the CSV reader and synthetic tests below.
+
+The public objective is transfer of the research process. C55 and FS1 are examples from one research lineage, not mandatory models for another market, instrument or strategy.
 
 ## Component map
 
@@ -20,9 +29,9 @@ See [CHANGELOG.md](CHANGELOG.md) for the changes grouped by release. Research No
 
 ## Obtain a working copy
 
-Download the whole repository using GitHub's **Code → Download ZIP**, or clone the repository, and preserve its folder layout. The relative links and commands refer to those canonical paths.
+Download the whole repository using GitHub's **Code → Download ZIP**, or clone the repository, and preserve its folder layout when you want to run the reader or tests. The relative links and commands below use those repository paths.
 
-Do not flatten the repository into renamed 00–04 Markdown files. A handout that omits the Python reader is a reading extract, not a runnable export-checking package. Previously distributed renamed handouts have not been inspected or repaired by this release; obtain a fresh whole-repository copy instead.
+A standalone Markdown copy is sufficient for reading the ideas. A runnable export-checking package additionally needs the reader, tests and their repository-relative paths.
 
 ## Use the workflow
 
