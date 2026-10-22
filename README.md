@@ -28,7 +28,7 @@ The Dinosaur note is **not Paper 002**. It preserves the evidence trail and the 
 - [**Market-State Measurement-First**](skills/market-state-measurement-first/SKILL.md) — a research workflow for measuring what changed in the market before attaching macroeconomic, political, news or regime explanations.
 
 
-### Important reading notes
+### Paper 001 — important reading notes
 
 - **Working paper, not peer-reviewed.** It should not be read as an academic journal acceptance, audited trading performance or investment advice.
 - Its quantitative cases come from **one historical research program** with related experiments and differing assumptions. They are not independent cross-market replications.
@@ -40,7 +40,7 @@ The Dinosaur note is **not Paper 002**. It preserves the evidence trail and the 
 
 Prepared by **Miller & Lunar Research** through a human-directed research workflow with AI-assisted code/analysis and editorial support; see the paper's disclosure for detail. This repository does not grant rights to third-party market data or code. No general reuse license is implied by public visibility.
 
-### Versions
+### Paper 001 — versions
 
 Paper 001 public v1.0 is a separate publication copy of a frozen internal archival edition dated 2026-10-11. Any substantive correction will be labeled in the publication's revision history.
 
