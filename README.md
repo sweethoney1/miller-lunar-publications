@@ -12,6 +12,22 @@ This is the **public publications library**. Research notebooks, original code, 
 
 **Paper 001 in one sentence:** Backtest return, equity recovery, modeled account-rule survival, payout claims, simulated receipts and actual household cash-flow are different measurable objects; choosing a metric requires specifying the underlying event and timing clock.
 
+
+## Public research notes
+
+| Note | Title | Edition | Read |
+| --- | --- | --- | --- |
+| RN-001 | **The Dinosaur Accident: Measuring Market Structure Before Explaining It** | Archive synthesis v1.0 — 2026-10-22 | [Read Research Note](research-notes/001-the-dinosaur-accident/README.md) |
+
+**Dinosaur note in one sentence:** A search for trading access points accidentally became a study of whether market structure itself can be measured consistently across periods; the resulting C55 execution candidate received prospective support but remained highly uneven by year and weak as a standalone business engine.
+
+The Dinosaur note is **not Paper 002**. It preserves the evidence trail and the methodological question that may later feed a separately frozen Paper 002 protocol.
+
+## Reusable research workflows
+
+- [**Market-State Measurement-First**](skills/market-state-measurement-first/SKILL.md) — a research workflow for measuring what changed in the market before attaching macroeconomic, political, news or regime explanations.
+
+
 ### Important reading notes
 
 - **Working paper, not peer-reviewed.** It should not be read as an academic journal acceptance, audited trading performance or investment advice.
