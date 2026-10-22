@@ -4,7 +4,16 @@ Independent working papers on systematic trading, risk measurement and financial
 
 This is the **public publications library**. Research notebooks, trading-engine and indicator implementations, proprietary data, account records and internal source-audit files remain in a **separate private research archive**. Selected workflow utilities, such as the FS1 audit CSV reader, are published here. Making this publication library public **does not** make the underlying experiment datasets publicly reproducible.
 
-Start with [HANDOFF.md](HANDOFF.md) for the component editions, runnable reader and folder layout; see [CHANGELOG.md](CHANGELOG.md) for the combined release record.
+## Choose your entry point
+
+This repository is meant to make the **research approach reusable**, not to ask readers to adopt our market conclusions.
+
+- **Want the transferable method?** Start with [Market-State Measurement-First](skills/market-state-measurement-first/SKILL.md). It is the shortest path from a vague claim such as “the market changed” to a measurable research question.
+- **Want to see where the question came from?** Read [The Dinosaur Accident](research-notes/001-the-dinosaur-accident/README.md). It preserves the discovery path, including failed and awkward results.
+- **Want to see a concrete measurement implementation?** Read [FS1 UNIVERSAL as a Market Thermometer](research-notes/002-fs1-market-thermometer/README.md) and its [worked example](skills/market-state-measurement-first/examples/fs1-universal.md).
+- **Want the runnable file map and audit utility?** Use [HANDOFF.md](HANDOFF.md). See [CHANGELOG.md](CHANGELOG.md) for publication revisions.
+
+Readers do not need to accept C55 or FS1 as universal models to use the workflow. The intended transfer is the sequence: define the object, measure it consistently, compare under one pipeline, separate observation from explanation, and state what the evidence does not establish.
 
 ## Published working papers
 
