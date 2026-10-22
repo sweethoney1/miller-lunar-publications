@@ -2,7 +2,7 @@
 
 Independent working papers on systematic trading, risk measurement and financial decision-making.
 
-This is the **public publications library**. Research notebooks, original code, proprietary data, account records and internal source-audit files remain in a **separate private research archive**. Making this publication library public **does not** make the underlying experiment datasets publicly reproducible.
+This is the **public publications library**. Research notebooks, trading-engine and indicator implementations, proprietary data, account records and internal source-audit files remain in a **separate private research archive**. Selected workflow utilities, such as the FS1 audit CSV reader, are published here. Making this publication library public **does not** make the underlying experiment datasets publicly reproducible.
 
 ## Published working papers
 
@@ -18,14 +18,15 @@ This is the **public publications library**. Research notebooks, original code, 
 | Note | Title | Edition | Read |
 | --- | --- | --- | --- |
 | RN-001 | **The Dinosaur Accident: Measuring Market Structure Before Explaining It** | Archive synthesis v1.2 — 2026-10-22 | [Read Research Note](research-notes/001-the-dinosaur-accident/README.md) |
+| RN-002 | **FS1 UNIVERSAL as a Market Thermometer** | Documentation v1.0 — 2026-10-22 | [Read FS1 Note](research-notes/002-fs1-market-thermometer/README.md) |
 
 **Dinosaur note in one sentence:** A search for trading access points became a study of consistently measured market structure; C55 received support in a frozen historical holdout, while uneven annual results and no qualifying continuity role at the three tested portfolio scales kept the economic conclusion limited.
 
-The Dinosaur note is **not Paper 002**. It preserves the evidence trail and the methodological question that may later feed a separately frozen Paper 002 protocol.
+The Dinosaur note and FS1 documentation note are **not Paper 002**. They preserve the discovery path and existing measurement example; a future Paper 002 needs its own frozen protocol. The FS1 reader checks an existing export and does not reconstruct FS1 from raw prices.
 
 ## Reusable research workflows
 
-- [**Market-State Measurement-First**](skills/market-state-measurement-first/SKILL.md) — a research workflow for measuring what changed in the market before attaching macroeconomic, political, news or regime explanations. Includes an [FS1 UNIVERSAL worked measurement example](skills/market-state-measurement-first/examples/fs1-universal.md).
+- [**Market-State Measurement-First**](skills/market-state-measurement-first/SKILL.md) — a research workflow for measuring what changed in the market before attaching macroeconomic, political, news or regime explanations. Includes an [FS1 UNIVERSAL worked measurement example](skills/market-state-measurement-first/examples/fs1-universal.md) and a [local CSV reader](skills/market-state-measurement-first/scripts/read_fs1_audit.py).
 
 
 ### Paper 001 — important reading notes

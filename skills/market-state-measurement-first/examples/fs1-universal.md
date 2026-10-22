@@ -1,116 +1,103 @@
-# FS1 UNIVERSAL — Worked Measurement Example
+# FS1 UNIVERSAL Worked Measurement Example
 
-**Purpose:** show what a measurement-first market-state table can look like in practice.
+**Documentation edition v1.1 | 2026-10-22**
 
-This example is derived from archived FS1 UNIVERSAL audit exports for XAUUSD and EURUSD. It is intentionally limited to the public research lesson. The private source code, raw market data and implementation formulas are not published here.
+Use FS1 as an optional worked example. Read the [FS1 research note](../../../research-notes/002-fs1-market-thermometer/README.md) for the archived evidence. Keep the general research workflow independent of FS1.
 
-FS1 should be read as a **market thermometer**, not a trading signal, forecasting engine or automatic strategy gate.
+The private price-to-axis implementation and raw datasets are not included. The public [reader](../scripts/read_fs1_audit.py) accepts an existing authorized audit export; it does not produce FS1 from OHLC or screenshots.
 
-## 1. What gets measured
+## 1. Define the observation object
 
-The current audit schema exposes four primary endogenous market-behavior axes:
+Record symbol, broker/source, server timezone, observed span, actual history origin, indicator version and data mode. UNIVERSAL and LEGACY_XAU are different coverage pipelines.
 
-| Axis | Research role |
+If an authorized `Market_Fingerprint_v0_3_indicator.mq5` indicator, internal version 0.31, is already installed:
+
+1. Select `InpDataMode = MP_UNIVERSAL`.
+2. Set `InpShowDetails = true` to inspect raw values.
+3. Set `InpExportAuditCSV = true`, keeping the intended history origin fixed.
+4. Use `InpAuditCutoff = 0` for the latest completed server sessions; a historical cutoff must be a supported past/current server midnight.
+5. Find `MQL5/Files/Market_Fingerprint_FS1_<SYMBOL>_universal_audit.csv` in the terminal's data folder after a successful rebuild.
+6. Preserve history-loading, reconciliation and NA messages rather than shortening history until a desired color appears.
+
+The display timeframe does not change the internal M1-to-M15/daily pipeline. The default history request starts at 2024.01.01; record the actual export span rather than assuming every file used that setting.
+
+## 2. Read numeric State before the code
+
+| Raw field | Meaning and units | Comparison prefix |
+| --- | --- | --- |
+| volatility | Percent-valued movement intensity | vol |
+| trend | Unsigned dimensionless efficiency/persistence | trend |
+| breakout | Percent-valued success rate under the existing event definition | breakout |
+| meanrev | Percent-valued success rate under the existing event definition | meanrev |
+
+Read the prefix's exported `_lag20`, `_delta20`, `_scale252` and `_z` fields. The volatility lag is `vol_lag20`, not `volatility_lag20`.
+
+- Lag20 is the value 20 observation positions earlier, with missing rows retained.
+- Delta20 is current minus lag. Percent-valued axes produce a difference in **percentage points**.
+- Scale252 and z describe scaling of the **change**, not extremeness of today's raw level.
+- D and Pulse describe change magnitude. Pulse is not a profit probability, a direction or an absolute cross-instrument scale.
+
+A larger unsigned trend measurement can describe a more persistent rise or fall. Delta is an endpoint comparison, not a fitted slope or a current-tick direction.
+
+## 3. Preserve quality and availability
+
+Server day D is usable no earlier than D+1 at server midnight under the completed-session pipeline. The export has neither a collection timestamp nor a UTC offset. The reader's earliest-availability field is derived, not an observed collection time.
+
+The `data_verified` flag comes from the exporter. Tick counts support broker-history reconciliation; they are not order flow. The reader does not independently inspect raw M1/M15/D1 history.
+
+Retain NA rows and unverified observations. Do not zero-fill axes or collapse the timeline before computing lags. A ready fingerprint with missing Pulse is possible.
+
+## 4. Run the public reader
+
+From the repository root, with Python 3.9 or newer and no third-party packages:
+
+~~~bash
+python skills/market-state-measurement-first/scripts/read_fs1_audit.py Market_Fingerprint_FS1_XAUUSD_universal_audit.csv --output fs1_report.json
+~~~
+
+On Windows, `py` can replace `python`. Omit `--output` to print JSON. Use `--mode LEGACY_XAU` only for a declared legacy export; do not treat it as the same measurement coverage as UNIVERSAL.
+
+The reader supports comma-separated UTF-8/UTF-8-BOM and UTF-16. It rejects malformed rows, invalid counts, nonfinite values, mixed/unexpected modes and non-increasing dates. It reports lag, delta and fingerprint mismatches using the export's own cuts. Equality at a cut stays on the lower bit.
+
+Exit 0 means the implemented export checks passed. Exit 2 means rejection or inconsistency. This does not certify raw-feed completeness, historical scaling/Pulse calculations or predictive ability. Whole missing sessions need an external calendar check.
+
+| JSON field | Interpretation |
 | --- | --- |
-| `volatility` | Measure the scale/intensity of price movement. |
-| `trend` | Measure directional persistence rather than merely direction. |
-| `breakout` | Measure breakout behavior / follow-through in the observed window. |
-| `meanrev` | Measure mean-reversion behavior / retracement burden in the observed window. |
+| export_data_verified_rows | Count of exporter flags, not independently audited sessions |
+| fingerprint_NA_rows | Missing labels retained in the timeline |
+| axis_support | Available/missing values and observed ranges |
+| latest_observed_row | Last input observation, even when unverified or incomplete |
+| error_count and first_errors | Failed check count and the first 25 details |
 
-These names identify the measurement roles. This public example does **not** define the private implementation formulas behind each field.
+The script operates locally and makes no network calls.
 
-The audit also stores event counts and success counts used by the implementation, including breakout and mean-reversion event fields.
+## 5. Read a concrete archived example
 
-## 2. Compare the state with its own history
+On the last common export day, 2024.06.28:
 
-A useful market-state measurement does not stop at today's absolute value.
+| Field | XAUUSD | EURUSD |
+| --- | ---: | ---: |
+| volatility | 1.406744 | 0.561747 |
+| vol_lag20 | 1.438156 | 0.421164 |
+| vol_delta20 | -0.031411 | +0.140583 |
+| fingerprint | FS1-F02 | FS1-F02 |
 
-The FS1 audit therefore keeps comparison fields including:
+Volatility was below its 20-observation reference in XAU and above that reference in EUR. The figures do not identify an external cause. The same code can hide meaningful numeric differences.
 
-- `*_lag20` — the corresponding value from 20 sessions earlier;
-- `*_delta20` — the change versus that 20-session reference;
-- `*_scale252` and `*_z` — longer-horizon scaling / standardization fields when sufficient history is available.
+These exports end in June 2024 and are **not current market readings**. Each file retained 20 initial NA labels. All coded EUR rows had the low volatility bit, showing a limitation of the fixed cut in that sample.
 
-This allows the research question to become more precise.
+## 6. Return a bounded report
 
-Instead of:
+Return the actual observation object and clock; quality and missingness; raw values, lags, deltas and units; an optional code after the values; evidence status; and the limits of the interpretation.
 
-> “The market feels more volatile now.”
+If only a news narrative or chart impression is supplied, label the numeric market-state claim **UNMEASURED** and identify the required price/export data. Do not invent percentages of news influence. If a required FS1 input is absent, report it rather than substituting a new estimator and calling it FS1.
 
-ask:
+Without the private exporter, use the general workflow with separately declared metrics. FS1 is an example, not a mandatory formula.
 
-> “How much did the volatility measurement change relative to the same pipeline 20 sessions earlier, and how unusual is the current level within its longer history?”
+## 7. Reading guide in Thai
 
-## 3. Compress only after measuring
+เริ่มจากข้อมูลและค่าดิบ ไม่เริ่มจากสี ถ้ามีไฟล์ audit ให้ใช้สคริปต์ตรวจ แล้วอ่านว่าสี่แกนมีค่าเท่าไร เปลี่ยนจาก 20 observations ก่อนเท่าไร และข้อมูลพร้อมแค่ไหน ค่าเปอร์เซ็นต์ลบกันได้เป็นจุดเปอร์เซ็นต์ ส่วน Trend วัดความต่อเนื่องแบบไม่บอกทิศขึ้นลง
 
-The audit contains a compact `fingerprint` field such as `FS1-Fxx`.
+F00 ถึง F15 เป็นรหัสย่อ ไม่มีลำดับดีหรือแย่ และ NA ไม่ใช่ F00 สองตลาดมีรหัสเดียวกันแต่ค่าดิบและการเปลี่ยนต่างกันได้ Pulse อ่านขนาดความเปลี่ยนเมื่อเทียบประวัติของตลาดนั้น ไม่ใช่โอกาสกำไร
 
-That label is **downstream** of the numeric measurements.
-
-Correct order:
-
-```text
-price / event data
-        ↓
-numeric market measurements
-        ↓
-historical comparisons
-        ↓
-optional fingerprint label
-```
-
-Incorrect order:
-
-```text
-choose a market label
-        ↓
-search for numbers that justify it
-```
-
-A label is useful for communication and indexing. It is not evidence by itself.
-
-## 4. Two-instrument sanity check
-
-The archived UNIVERSAL audit was produced for both **XAUUSD** and **EURUSD** under the same output schema.
-
-That does not prove universal validity across instruments. It demonstrates the research discipline being sought: use the **same camera** before comparing different markets or periods.
-
-When adapting the workflow, keep definitions, timestamp handling, missing-data rules and causal availability consistent before interpreting differences.
-
-## 5. How to use this example without copying FS1
-
-You do not need FS1's private formulas to apply the method.
-
-Choose a small set of measurements appropriate to your question. For example:
-
-- realized range or dispersion for volatility;
-- path efficiency or directional persistence for trend;
-- continuation after a defined break for breakout follow-through;
-- retracement depth or return-to-reference frequency for mean reversion.
-
-Then freeze those definitions and create a table with one row per chosen observation period.
-
-A minimal template:
-
-| date | volatility | trend | breakout | meanrev | vol_delta | trend_delta | breakout_delta | meanrev_delta |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| t0 | ... | ... | ... | ... | ... | ... | ... | ... |
-| t1 | ... | ... | ... | ... | ... | ... | ... | ... |
-
-Only after that table exists should you ask whether a news, macroeconomic, political or other external variable explains the observed transition.
-
-## 6. Evidence boundary
-
-This worked example establishes only that the archived FS1 UNIVERSAL pipeline produces a consistent numeric market-state audit with the field families described above.
-
-It does **not** establish that:
-
-- the four axes are sufficient to describe every market state;
-- the fingerprint labels predict returns;
-- a particular fingerprint should enable or disable a strategy;
-- the same thresholds are appropriate for every instrument;
-- an external event caused any measured transition.
-
-The reusable lesson remains:
-
-> **Measure first. Explain later.**
+ถ้ายังไม่มีข้อมูลวัด อย่าสรุปว่าข่าวมีอิทธิพลกี่เปอร์เซ็นต์จากความรู้สึก ให้ระบุว่า UNMEASURED ก่อน สกิลช่วยจัดลำดับวิจัย เครื่องอ่าน CSV ช่วยตรวจไฟล์ที่มีอยู่ ส่วนสูตรสร้าง FS1 จากราคายังอยู่ในงานต้นฉบับ

@@ -1,6 +1,6 @@
 ---
 name: market-state-measurement-first
-description: Use when investigating why a trading strategy behaves differently across periods, when someone says the market has changed character, or when macro/news/regime stories are being proposed before the market-state change itself has been measured.
+description: Use when investigating why a trading strategy behaves differently across periods, when someone says the market has changed character, when macro/news/regime explanations precede numerical measurement, or when reading FS1 UNIVERSAL audit CSVs as a worked measurement example.
 ---
 
 # Market-State Measurement-First
@@ -29,6 +29,8 @@ Use it when the working question sounds like:
 ## Do not start with a story
 
 External variables may matter, but do not make them the first explanation unless they have already been operationalized.
+
+If no numerical data and declared measurement are supplied, label the market-state claim **UNMEASURED** and identify the required input. Do not invent a percentage of news influence from a chart impression or language-model confidence.
 
 Bad research order:
 
@@ -92,28 +94,20 @@ Do not include every available feature simply because it exists.
 
 ## Worked example — FS1 UNIVERSAL as a market thermometer
 
-A separate Miller & Lunar Research tool, **FS1 UNIVERSAL**, is one example of what a measurement-first output can look like. It is a **thermometer**, not an entry signal and not a claim that four variables fully describe a market.
+Use FS1 as an optional example, not a mandatory measurement recipe. Its four raw daily fields are `volatility`, `trend`, `breakout` and `meanrev`. Read the numbers, their availability and their 20-observation changes before interpreting the fingerprint.
 
-The current audit export exposes four primary daily measurement axes:
+When an FS1 audit is supplied, read [the worked example](examples/fs1-universal.md) for the exact export fields, units, clock, modes and command. Use [scripts/read_fs1_audit.py](scripts/read_fs1_audit.py) to check the existing export. The helper preserves NA rows, rejects mixed modes and checks exported lags, deltas and code encoding. It does not compute private FS1 axes from raw prices.
 
-- `volatility`
-- `trend`
-- `breakout`
-- `meanrev`
+Keep these distinctions explicit:
 
-The audit also records comparison fields such as 20-session lags/deltas, longer-horizon scaling/standardization fields when available, and a compact `fingerprint` state label.
+- UNIVERSAL and LEGACY_XAU use different coverage rules; code names alone do not make them comparable.
+- Trend is unsigned persistence, not price direction.
+- The standardization and Pulse fields describe change; a ready fingerprint can coexist with missing Pulse.
+- Percent-valued axes have deltas in percentage points.
+- F00 through F15 have no good/bad or danger ordering. NA is not F00.
+- Day D is a completed server-day observation; a derived earliest availability boundary is not an observed collection timestamp.
 
-The important lesson is the **shape of the workflow**, not the private implementation:
-
-1. choose a small set of endogenous market behaviors;
-2. compute them under one consistent data pipeline;
-3. retain the raw numeric measurements;
-4. compare today's values with earlier values;
-5. only then compress the measurements into a label if a label is useful.
-
-A fingerprint label is therefore downstream of measurement. It must never replace the underlying numbers.
-
-Public worked example: [FS1 UNIVERSAL measurement example](examples/fs1-universal.md).
+If the private exporter is unavailable, use separately declared measurements under the general workflow. Do not substitute new formulas and label them FS1. The [FS1 research note](../../research-notes/002-fs1-market-thermometer/README.md) records the archived example and its evidence boundary.
 
 ## Step 4 — Separate description from selection
 
