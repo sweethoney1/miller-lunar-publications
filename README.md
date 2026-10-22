@@ -17,9 +17,9 @@ This is the **public publications library**. Research notebooks, original code, 
 
 | Note | Title | Edition | Read |
 | --- | --- | --- | --- |
-| RN-001 | **The Dinosaur Accident: Measuring Market Structure Before Explaining It** | Archive synthesis v1.0 — 2026-10-22 | [Read Research Note](research-notes/001-the-dinosaur-accident/README.md) |
+| RN-001 | **The Dinosaur Accident: Measuring Market Structure Before Explaining It** | Archive synthesis v1.1 — 2026-10-22 | [Read Research Note](research-notes/001-the-dinosaur-accident/README.md) |
 
-**Dinosaur note in one sentence:** A search for trading access points accidentally became a study of whether market structure itself can be measured consistently across periods; the resulting C55 execution candidate received prospective support but remained highly uneven by year and weak as a standalone business engine.
+**Dinosaur note in one sentence:** A search for trading access points became a study of consistently measured market structure; C55 received support in a frozen historical holdout, while uneven annual results and no qualifying continuity role at the three tested portfolio scales kept the economic conclusion limited.
 
 The Dinosaur note is **not Paper 002**. It preserves the evidence trail and the methodological question that may later feed a separately frozen Paper 002 protocol.
 
