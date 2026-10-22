@@ -1,7 +1,7 @@
 # The Dinosaur Accident: Measuring Market Structure Before Explaining It
 
 **Miller & Lunar Research — Public Research Note 001**  
-**Archive synthesis v1.1 | 2026-10-22 | Not peer reviewed**  
+**Archive synthesis v1.2 | 2026-10-22 | Not peer reviewed**  
 **Status:** retrospective synthesis of an existing private research lineage; **no new experiment was run for this note**.
 
 **Research disclosure:** This note summarizes a human-directed research program with AI-assisted code, analysis and editorial drafting. The underlying market data, source code, intermediate tables and private research links are not published here. Public visibility does not grant rights to third-party market data. Nothing in this note is investment advice or audited trading performance.
@@ -63,6 +63,8 @@ The H4 census contained:
 | 2024 | 34 |
 | 2025 | 30 |
 
+These counts are the **frozen H4 structural-trend episode populations used by this archive**. This public note does not independently restate a separate percentile cutoff, and the counts should not be generalized into a universal Dinosaur threshold outside the frozen pipeline.
+
 Across the five primary H4 lenses, all reported pairwise Spearman relationships retained the same sign between 2024 and 2025. Examples:
 
 | Relationship | 2024 Spearman | 2025 Spearman |
@@ -109,6 +111,19 @@ This distinction matters. Two periods may contain a similar macro structure whil
 
 The study then descended once more to M15, again without allowing M15 to redefine the already-frozen H4 population.
 
+The research sequence can be read as a one-way chain:
+
+```mermaid
+flowchart LR
+    A[Freeze H4 structural population] --> B[Inspect H1 anatomy]
+    B --> C[Inspect M15 lineage]
+    C --> D[Freeze one C55 candidate]
+    D --> E[Open Jan-Jul 2026 historical holdout]
+    E --> F[Test C55 against A+M+E baseline]
+```
+
+Lower-timeframe observations could describe the frozen parent population, but they were not allowed to travel backward and redefine which H4 episodes existed.
+
 Mechanical checks recorded:
 
 | Measure | 2024 | 2025 |
@@ -154,7 +169,9 @@ Here, **prospective** describes the order of hypothesis freezing and holdout ins
 
 ## 5. What happened when the historical holdout was opened?
 
-The held-out historical evaluation admitted 14 candidates from the available January–July 2026 sample. The frozen development and holdout chronology later contained:
+The held-out historical evaluation admitted 14 candidates from the available January–July 2026 sample. Here, **R** means realized payoff normalized by each candidate's frozen initial structural risk (the entry-to-protective-stop distance); +1R equals one unit of that initial risk.
+
+The frozen development and holdout chronology later contained:
 
 | Partition | Admitted candidates | Realized R |
 | --- | ---: | ---: |
@@ -169,12 +186,16 @@ This is exactly why the Dinosaur story should **not** be published as a “winni
 
 An internal parking decision classified C55 as a validated portfolio-engine candidate with **weak standalone economics**. The research explicitly prohibited retuning C55 merely to make it trade more frequently or look better as a standalone strategy.
 
-A subsequent archived portfolio test, **C55 Dinosaur × A+M+E Marginal Portfolio Overlay v0.1**, asked whether C55 could improve the existing pack's return continuity. The report reconciled the frozen C55 identities and realized-R values without regenerating candidates or outcomes; R1 was excluded from the baseline.
+A subsequent archived portfolio test, **C55 Dinosaur × A+M+E Marginal Portfolio Overlay v0.1**, asked whether C55 could improve the existing pack's return continuity. Here, **A+M+E** denotes the project's existing multi-strategy baseline pack; **R1** was another strategy module deliberately excluded from this particular comparison. The report reconciled the frozen C55 identities and realized-R values without regenerating candidates or outcomes.
+
+The archived evaluation used a formal drawdown guardrail and a separate continuity reference. The 60-day continuity value was descriptive in the source report, so this note does not reinterpret it as a universal smoothness formula or an independent market law.
 
 | Overlay setting | Archived result |
 | --- | --- |
 | Baseline | A+M+E |
 | Tested relative C55 scales | 0.25X, 0.50X, 1.00X |
+| Formal drawdown guardrail | -10.542780337942R |
+| Continuity reference | 60 days (descriptive) |
 | Qualifying tested scales | None |
 | Final decision | `C55_EDGE_REAL_BUT_NO_CONTINUITY_ROLE_AT_TESTED_SCALES_v0.1` |
 
@@ -322,3 +343,4 @@ Prepared by **Miller & Lunar Research** through a human-directed research workfl
 | --- | --- | --- |
 | v1.0 | 2026-10-22 | Initial public archive synthesis. |
 | v1.1 | 2026-10-22 | Clarified that the designated 2026 evaluation was a historical holdout rather than live forward trading; added the later A+M+E overlay decision and its tested-scale boundary. No new market experiment, candidate rerun or parameter search. |
+| v1.2 | 2026-10-22 | Editorial clarification only: defined R, explained A+M+E and R1, surfaced the archived drawdown/continuity criteria, clarified the frozen H4 episode counts without inventing a new threshold, and added a one-way H4→H1→M15→C55 research-flow diagram. No new experiment or changed conclusion. |
