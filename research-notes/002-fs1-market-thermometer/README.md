@@ -1,7 +1,7 @@
 # FS1 UNIVERSAL as a Market Thermometer
 
 **Miller & Lunar Research — Public Research Note 002**  
-**Documentation edition v1.0 | 2026-10-22 | Not peer reviewed**
+**Documentation edition v1.1 | 2026-10-22 | Not peer reviewed**
 
 This is **Research Note 002, not Paper 002**. It documents an existing measurement tool and archived outputs. It adds no market experiment, forecasting test, strategy gate or parameter search.
 
@@ -43,7 +43,7 @@ UNIVERSAL reconciles M1 aggregates with native broker M15 and D1 OHLC and tick c
 
 Observations use the broker's server-day boundary. Under the completed-session pipeline, day D is usable no earlier than D+1 at server midnight. The CSV supplies `server_day`, not a collection timestamp or UTC offset. This derived earliest boundary does not prove that a reading was collected on time.
 
-UNIVERSAL and LEGACY_XAU have different coverage rules despite sharing the numerical core. Do not match a legacy historical profile to a UNIVERSAL display merely because both show the same FS1 code.
+`LEGACY_XAU` is the older XAU-specific coverage/profile retained from earlier FOUR work. `UNIVERSAL` is the current default cross-symbol pipeline used in the reviewed FS1 work. The modes share the numerical core but differ in coverage rules, so identical FS1 codes should not be treated as directly interchangeable across modes. In the reviewed UNIVERSAL implementation, M1-derived observations are reconciled with broker-native M15 and D1 history.
 
 Retain missing and unverified observations in the timeline. Do not drop them before computing row-based lags, fill missing values with zero, or turn a missing code into F00. A fingerprint may be ready while Pulse remains missing.
 
@@ -110,5 +110,6 @@ FS1 remains a small descriptive thermometer. This release adds no forecast, stat
 | Edition | Date | Change |
 | --- | --- | --- |
 | v1.0 | 2026-10-22 | Documented the existing thermometer, reviewed two archived exports and added a CSV reader. No new market run or changed measurement rule. |
+| v1.1 | 2026-10-22 | Editorial clarification only: explained the four-bit/16-code encoding and distinguished the archived LEGACY_XAU profile from the reviewed UNIVERSAL cross-symbol pipeline. No measurement rule, threshold, result or conclusion changed. |
 
 Prepared by **Miller & Lunar Research** through a human-directed research workflow with AI-assisted code, analysis and editorial support. See the repository's attribution and rights boundary.
